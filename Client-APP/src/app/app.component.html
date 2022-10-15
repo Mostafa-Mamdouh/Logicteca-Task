@@ -1,0 +1,9 @@
+<ngx-spinner> </ngx-spinner>
+<div class="main-wrapper">
+  <div class="content-wrapper">
+    <router-outlet
+      #outlet="outlet"
+      (activate)="onActivate($event)"
+    ></router-outlet>
+  </div>
+</div>

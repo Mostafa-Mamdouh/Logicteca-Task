@@ -1,0 +1,111 @@
+
+<section class="Shadowbox p-3">
+<div class="" id="page-wrapper">
+  <div class="container-fluid">
+   
+    <div class="row row-stat">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default panel-flat">
+              <div class="panel-body">
+                <div class="panel-heading panel-heading-no-divider">
+                </div>
+                <div class="table-responsive">
+                  <div class="col-md-12 form-inline md-form form-sm mt-1">
+                 
+                    <div class="row g-4 md-form">
+                      <div class="col-auto">
+                        <i class="fa fa-search active" aria-hidden="true"></i>
+                        <input
+                          *ngIf="products"
+                          (keyup)="onSearch()"
+                          class="form-control searchbox form-control-sm ml-3 w-75"
+                          type="text"
+                          placeholder="Search"
+                          aria-label="Search"
+                          #search
+                        />
+                      </div>
+                      <div class="col-auto"></div>
+                      <div class="col-auto"></div>
+            
+                      <div class="col-auto">
+                        <button (click)="Export()" class="btn btn-primary">
+                          <i class="fa fa-file-export" aria-hidden="true"></i>
+                          Export
+                        </button>
+                      </div>
+                      
+
+                      <div class="col-auto">
+                        <app-upload-file (onFileUploaded)="uploadFile($event)"></app-upload-file>
+                        </div>
+               
+              
+                
+
+                 
+                    </div>
+                  </div>
+                  <br />
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Part SKU</th>
+                        <th>Band</th>
+                        <th>Category Code</th>
+                        <th>Manufacturer</th>
+                        <th>Item Description</th>
+                        <th>List Price</th>
+                        <th>Minimum Discount</th>
+                        <th>Discounted Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr
+                        *ngFor="
+                          let item of products 
+                        "
+                      >
+                        <td>
+                          {{ item.partSKU }}
+                        </td>
+                        <td>{{ item.band }}</td>
+                        <td>{{ item.categoryCode }}</td>
+                        <td>{{ item.manufacturer }}</td>
+                        <td>{{ item.itemDescription }}</td>
+                        <td>{{ item.listPrice|currency }}</td>
+                        <td>{{ item.minimumDiscount|percent }}</td>
+                        <td>{{ item.discountedPrice|currency }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+               
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                  <div class="xs-mb-50 xs-mt-40 pull-right">
+                    <app-pager
+                      [pageSize]="inventoryParams.pageSize"
+                      [totalCount]="totalCount??0"
+                      (pageChanged)="onPageChanged($event)"
+                    ></app-pager>
+                  </div>
+                  <div class="xs-mb-50 xs-mt-40 pull-left">
+                    <app-paging-header
+                      [pageNumber]="this.inventoryParams.pageNumber"
+                      [pageSize]="this.inventoryParams.pageSize"
+                      [totalCount]="totalCount??0"
+                    ></app-paging-header>
+                  </div>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

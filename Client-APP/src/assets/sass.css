@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+/* --------------- VARIABLES CSS ------------------------- */
+:root {
+  --header-height: 3rem;
+  /* ------------- COLORS -----------------*/
+  --shadow-box: rgba(77, 195, 228, 0.5);
+  --main-color: #51c8ea;
+  --sidebar-main-color: #183765;
+  --sidebar-second-color: #20416d;
+  --main-text-color: #8490a4;
+  --second-text-color: #bfc7d4;
+  --filter-color: #87d8f2;
+  --calendar-day-color: #a0a0a0;
+  --main-gradient: linear-gradient(
+    90deg,
+    rgba(77, 195, 228, 1) 50%,
+    rgba(161, 233, 217, 1) 100%
+  );
+  --notify-gradient: linear-gradient(
+    121deg,
+    rgb(219, 32, 36) 25%,
+    rgb(255 0 194 /42%) 100%
+  );
+  --dark-bg: #383848;
+  --main-color-alt: #af547d;
+  --text-color: #707070;
+  --white-color: #ffffff;
+  --white-alt: #e6e6e6;
+
+  /* ------------- FONT ------------------*/
+  --body-font: Poppins-Regular;
+  --biggest-font-size: 2.25rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /* ------------- MARGIN PADDING ------------------*/
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  /* ------------- Z-Index ------------------*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* --------------- Base CSS ------------------------- */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: var(--second-color);
+  font-size: 13px;
+  font-weight: 400;
+  font-family: var(--body-font);
+  line-height: 28px;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  user-select: none;
+}
+img {
+  vertical-align: middle;
+  height: auto;
+}
+a {
+  text-decoration: none !important;
+  display: inline-block;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+button:focus {
+  outline: none;
+}
+
+/* --------------- General CSS ------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+span,
+label {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+section {
+  width: 100%;
+  border-radius: 10px;
+}
+
+ table {
+  font-size: 12px;
+  border-top-width: 0;
+}
+
+table thead {
+  background: var(--main-color);
+  color: #fff;
+}
+
+table thead tr th {
+  border-top-width: 0px;
+}
+table thead tr th:first-child {
+  border-top-left-radius: 12px;
+}
+table thead tr th:last-child {
+  border-top-right-radius: 12px;
+}
+table td {
+  border: 0px !important;
+  color: rgb(132, 144, 164);
+}
+
+table .table-head_sort {
+  cursor: pointer;
+}
+
+.btn{
+  background: var(--main-color);
+  color: #fff;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
